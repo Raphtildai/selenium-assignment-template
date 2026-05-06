@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Portfolio Selenium Test Suite" verbose="1" parallel="none">
+
+    <listeners>
+        <listener class-name="com.portfolio.utils.ScreenshotListener"/>
+    </listeners>
+
+    <test name="Login Tests">
+        <classes>
+            <class name="com.portfolio.tests.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Public Site Tests">
+        <classes>
+            <class name="com.portfolio.tests.PublicSiteTest"/>
+        </classes>
+    </test>
+
+    <test name="Project Admin Tests">
+        <classes>
+            <class name="com.portfolio.tests.ProjectTest"/>
+        </classes>
+    </test>
+
+    <test name="Certificate Admin Tests">
+        <classes>
+            <class name="com.portfolio.tests.CertificateTest"/>
+        </classes>
+    </test>
+
+    <test name="Experience Admin Tests">
+        <classes>
+            <class name="com.portfolio.tests.ExperienceTest"/>
+        </classes>
+    </test>
+
+</suite>
