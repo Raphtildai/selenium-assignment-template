@@ -3,6 +3,7 @@ package com.portfolio.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
@@ -132,5 +133,18 @@ public class PublicPortfolioPage extends BasePage {
     public String getFirstHeading() {
         List<WebElement> headings = driver.findElements(anyHeading);
         return headings.isEmpty() ? "" : headings.get(0).getText().trim();
+    }
+
+    /** Hovers over the first nav link and returns the element for assertion. */
+    public WebElement hoverOverFirstNavLink() {
+        WebElement navLink = waitForVisible(navLinks);
+        new Actions(driver).moveToElement(navLink).perform();
+        return navLink;
+    }
+
+    /** Returns the CSS value of a property on the first nav link (for hover verification). */
+    public String getFirstNavLinkCssValue(String property) {
+        WebElement navLink = driver.findElement(navLinks);
+        return navLink.getCssValue(property);
     }
 }
